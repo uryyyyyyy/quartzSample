@@ -15,3 +15,14 @@ storeDurably -> Triggerに参照されなくても存在し続けるか否か
 requestRecovery -> 失敗時に再実行するか否か
 setJobData -> Job実行時に使える変数群をsetする。
 withIdentity -> 名前を付ける。
+
+
+## TODO
+即時実行
+平日
+毎週末の平日
+特定の日のみ
+特定の日を除外
+例外時の復旧
+spring上で実行
+読み込みと書き込みの分散（DB上）
