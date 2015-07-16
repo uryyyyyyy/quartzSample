@@ -13,7 +13,7 @@ import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
 
-class LamdbaJobSample {
+class LambdaJobSample {
     public static void main(String[] args) throws SchedulerException {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.start();
