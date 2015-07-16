@@ -1,8 +1,9 @@
-package com.example;
+package com.example.util.triggerSamples;
 
 import java.util.Calendar;
 
 import org.quartz.JobBuilder;
+import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -11,14 +12,20 @@ import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
-import com.example.util.jobs.InnerJobJob;
+import com.example.util.di.MyLogicImpl;
+import com.example.util.jobs.DIJob;
+import com.example.util.jobs.WithDataJob;
 
 
-class WithInnerJobSample {
+class DISample {
     public static void main(String[] args) throws SchedulerException {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.start();
-        JobDetail job = JobBuilder.newJob(InnerJobJob.class).build();
+
+        JobDataMap jobDataMap = new JobDataMap();
+        jobDataMap.put("key", new MyLogicImpl());
+
+        JobDetail job = JobBuilder.newJob(DIJob.class).setJobData(jobDataMap).build();
         Trigger trigger = getOneTimeTrigger();
         scheduler.scheduleJob(job, trigger);
     }

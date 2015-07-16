@@ -1,4 +1,4 @@
-package com.example;
+package com.example.util.triggerSamples;
 
 import org.quartz.Job;
 import org.quartz.JobBuilder;

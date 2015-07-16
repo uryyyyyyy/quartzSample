@@ -1,4 +1,4 @@
-package com.example;
+package com.example.util.triggerSamples;
 
 import java.util.Calendar;
 
@@ -11,14 +11,14 @@ import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
-import com.example.util.jobs.HelloJob;
+import com.example.util.jobs.InnerJobJob;
 
 
-class OneTimeSample {
+class WithInnerJobSample {
     public static void main(String[] args) throws SchedulerException {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.start();
-        JobDetail job = JobBuilder.newJob(HelloJob.class).build();
+        JobDetail job = JobBuilder.newJob(InnerJobJob.class).build();
         Trigger trigger = getOneTimeTrigger();
         scheduler.scheduleJob(job, trigger);
     }
