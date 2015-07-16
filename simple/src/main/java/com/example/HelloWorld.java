@@ -12,6 +12,7 @@ import org.quartz.impl.StdSchedulerFactory;
 import com.example.util.jobs.HelloJob;
 
 
+
 class HelloWorld {
     public static void main(String[] args) throws SchedulerException {
         System.out.println("Hello World");
