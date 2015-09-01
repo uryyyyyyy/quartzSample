@@ -5,7 +5,7 @@ import java.time.Month;
 import java.time.Year;
 import java.util.Set;
 
-public interface NormalDateUtil {
+public interface NormalDayUtil {
 
     LocalDate calcLastDateOfMonth(Year year, Month month);
 

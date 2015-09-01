@@ -6,7 +6,7 @@ import java.time.Year;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
-import com.example.util.BusinessHour;
+import com.example.util.util.BusinessHour;
 
 public interface BusinessHourUtil {
 
